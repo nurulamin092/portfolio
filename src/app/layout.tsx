@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { ActiveSectionProvider } from "@/providers/ActiveSectionProvider";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +30,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
-        {children}
+        <ActiveSectionProvider>
+          <Navbar />
+
+          {children}
+        </ActiveSectionProvider>
       </body>
     </html>
   );

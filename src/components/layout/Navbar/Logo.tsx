@@ -3,8 +3,9 @@ import Link from "next/link";
 export default function Logo() {
   return (
     <Link href="/" className="text-2xl font-bold tracking-tight">
-      Nurul
-      <span className="text-violet-500">.</span>
+      <span className="text-violet-400">N</span>
+
+      <span>A</span>
     </Link>
   );
 }

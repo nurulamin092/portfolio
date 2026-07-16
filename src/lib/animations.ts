@@ -1,5 +1,7 @@
 import type { Variants } from "framer-motion";
 
+const easing: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
 export const fadeUp: Variants = {
   hidden: {
     opacity: 0,
@@ -12,7 +14,7 @@ export const fadeUp: Variants = {
 
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: easing,
     },
   },
 };
@@ -64,7 +66,22 @@ export const floating: Variants = {
     transition: {
       repeat: Infinity,
       duration: 5,
-      ease: "easeInOut",
+      ease: easing,
+    },
+  },
+};
+
+export const navbarReveal: Variants = {
+  hidden: {
+    y: -100,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: easing,
     },
   },
 };

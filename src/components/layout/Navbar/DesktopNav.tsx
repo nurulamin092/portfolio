@@ -1,12 +1,16 @@
 import { navigation } from "@/data/navigation";
-import NavItem from "./NavItem";
+
+import NavLink from "./NavLink";
+import ResumeButton from "./ResumeButton";
 
 export default function DesktopNav() {
   return (
-    <nav className="hidden items-center gap-8 lg:flex">
+    <div className="hidden items-center gap-2 lg:flex">
       {navigation.map((item) => (
-        <NavItem key={item.href} {...item} />
+        <NavLink key={item.href} href={item.href} label={item.label} />
       ))}
-    </nav>
+
+      <ResumeButton />
+    </div>
   );
 }

@@ -1,42 +1,41 @@
 "use client";
 
 import Container from "@/components/common/Container";
+import { useScroll } from "@/hooks/use-scroll";
 
-import Logo from "./Logo";
 import DesktopNav from "./DesktopNav";
+import Logo from "./Logo";
+import MobileNav from "./MobileNav";
 
-import { buttonVariants } from "@/components/ui/button";
-
-import { Download } from "lucide-react";
-
-import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/config/site";
+import NavbarReveal from "@/components/motion/NavbarReveal";
 
 export default function Navbar() {
+  const scrolled = useScroll();
+
   return (
-    <header className="sticky top-0 z-50">
+    <NavbarReveal
+      className={cn(
+        "sticky top-0 z-50 transition-all duration-500",
+        scrolled
+          ? "border-b border-white/10 bg-slate-950/70 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,.35)]"
+          : "bg-transparent",
+      )}
+    >
       <Container>
-        <div className="mt-5 flex h-16 items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-6 backdrop-blur-xl">
+        <div
+          className={cn(
+            "flex items-center justify-between transition-all duration-300",
+            scrolled ? "h-16" : "h-20",
+          )}
+        >
           <Logo />
 
           <DesktopNav />
 
-          <Link
-            href={siteConfig.github}
-            target="_blank"
-            className={cn(
-              buttonVariants({
-                size: "lg",
-              }),
-              "rounded-full",
-            )}
-          >
-            <Download className="mr-2 h-4 w-4" />
-            Resume
-          </Link>
+          <MobileNav />
         </div>
       </Container>
-    </header>
+    </NavbarReveal>
   );
 }

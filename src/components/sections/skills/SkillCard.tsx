@@ -1,28 +1,55 @@
 import { Card } from "@/components/common/card";
 import { skillIcons } from "@/lib/skill-icons";
+import { skillColors } from "@/lib/skill-colors";
+
+import { cn } from "@/lib/utils";
+
 import type { Skill } from "@/types/skill";
 
-interface SkillCardProps {
+interface Props {
   skill: Skill;
 }
 
-export default function SkillCard({ skill }: SkillCardProps) {
-  const Icon = skillIcons[skill.icon as keyof typeof skillIcons];
+export default function SkillCard({ skill }: Props) {
+  const Icon = skillIcons[skill.icon];
 
   return (
-    // <div className="group rounded-2xl border border-border bg-background/40 p-5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:shadow-xl">
-    //   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 transition group-hover:scale-110">
-    //     <Icon className="size-6" />
-    //   </div>
+    <Card
+      padding="md"
+      className={cn(
+        "group",
 
-    //   <h3 className="font-medium">{skill.name}</h3>
-    // </div>
-    <Card padding="md">
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 transition group-hover:scale-110">
-        <Icon className="size-6" />
+        "rounded-2xl",
+
+        "border border-white/10",
+
+        "bg-white/2",
+
+        "transition-all duration-300",
+
+        "hover:-translate-y-1",
+
+        "hover:border-violet-500/40",
+
+        "hover:bg-white/4",
+
+        "hover:shadow-[0_20px_60px_rgba(124,58,237,.15)]",
+      )}
+    >
+      <div className="flex items-center gap-5">
+        <Icon
+          className={cn(
+            "text-4xl transition-transform duration-300 group-hover:scale-110",
+            skillColors[skill.icon],
+          )}
+        />
+
+        <div>
+          <h3 className="font-semibold text-white">{skill.name}</h3>
+
+          <p className="mt-1 text-sm text-muted-foreground">Technology</p>
+        </div>
       </div>
-
-      <h3 className="font-medium">{skill.name}</h3>
     </Card>
   );
 }

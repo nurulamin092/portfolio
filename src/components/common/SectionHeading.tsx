@@ -6,18 +6,22 @@ type Props = {
 
 export default function SectionHeading({ badge, title, description }: Props) {
   return (
-    <div className="max-w-2xl">
+    <div className="mx-auto mb-20 max-w-3xl text-center">
       {badge && (
-        <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-sm text-violet-400">
+        <span className="rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-1 text-sm font-medium uppercase tracking-widest text-violet-400">
           {badge}
         </span>
       )}
 
-      <h2 className="mt-5 text-4xl font-bold tracking-tight lg:text-5xl">
+      <h2 className="mt-6 text-4xl font-bold tracking-tight lg:text-5xl">
         {title}
       </h2>
 
-      {description && <p className="mt-4 text-slate-400">{description}</p>}
+      {description && (
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+          {description}
+        </p>
+      )}
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function HeroSocial() {
   return (
     <div className="mt-8 flex items-center gap-4">
       <Link
-        href={siteConfig.github}
+        href={siteConfig.social.github.url}
         target="_blank"
         aria-label="GitHub"
         className="rounded-full border border-border p-3 transition-all hover:border-violet-500 hover:text-violet-400"
@@ -17,7 +17,7 @@ export default function HeroSocial() {
       </Link>
 
       <Link
-        href={siteConfig.linkedin}
+        href={siteConfig.social.linkedin.url}
         target="_blank"
         aria-label="LinkedIn"
         className="rounded-full border border-border p-3 transition-all hover:border-violet-500 hover:text-violet-400"

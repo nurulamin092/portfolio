@@ -1,41 +1,27 @@
-import Link from "next/link";
-
 import { Download, ArrowRight } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
-
-import { buttonVariants } from "@/components/ui/button";
-
-import { cn } from "@/lib/utils";
+import LinkButton from "@/components/common/link-button";
 
 export default function HeroButtons() {
   return (
     <div className="mt-8 flex flex-wrap gap-4">
-      <Link
-        href="#contact"
-        className={buttonVariants({
-          size: "lg",
-        })}
-      >
+      <LinkButton href="#contact" size="lg">
         Hire Me
-        <ArrowRight className="ml-2 size-4" />
-      </Link>
+        <ArrowRight className="size-4" />
+      </LinkButton>
 
-      <Link
+      <LinkButton
         href={siteConfig.resume}
         target="_blank"
         rel="noopener noreferrer"
-        className={cn(
-          buttonVariants({
-            variant: "outline",
-            size: "lg",
-          }),
-          "rounded-full",
-        )}
+        variant="outline"
+        size="lg"
+        className="rounded-full"
       >
-        <Download className="mr-2 size-4" />
+        <Download className="size-4" />
         Resume
-      </Link>
+      </LinkButton>
     </div>
   );
 }

@@ -1,3 +1,6 @@
+import { FileText, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 import { siteConfig } from "@/config/site";
 
 export const contactData = [
@@ -5,23 +8,27 @@ export const contactData = [
     title: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
+    icon: Mail,
   },
 
   {
     title: "GitHub",
     value: "github.com/nurulamin092",
-    href: siteConfig.github,
+    href: siteConfig.social.github.url,
+    icon: FaGithub,
   },
 
   {
     title: "LinkedIn",
     value: "linkedin.com/in/mnurulamin",
-    href: siteConfig.linkedin,
+    href: siteConfig.social.linkedin.url,
+    icon: FaLinkedin,
   },
 
   {
     title: "Resume",
     value: "Download Resume",
-    href: siteConfig.resume,
+    href: siteConfig.social.resume.url,
+    icon: FileText,
   },
-];
+] as const;

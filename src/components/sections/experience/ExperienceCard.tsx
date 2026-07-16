@@ -1,3 +1,4 @@
+import { Card } from "@/components/common/card";
 import { Experience } from "@/types/experience";
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <article className="rounded-3xl border border-border bg-card p-8">
+    <Card variant="glass" padding="lg">
       <p className="text-sm text-violet-400">{experience.period}</p>
 
       <h3 className="mt-2 text-2xl font-bold">{experience.company}</h3>
@@ -22,6 +23,6 @@ export default function ExperienceCard({ experience }: Props) {
           <li key={item}>• {item}</li>
         ))}
       </ul>
-    </article>
+    </Card>
   );
 }

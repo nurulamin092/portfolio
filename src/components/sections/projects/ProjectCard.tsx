@@ -6,6 +6,7 @@ import ProjectTech from "./ProjectTech";
 import FeaturedBadge from "./FeaturedBadge";
 
 import { Project } from "@/types/project";
+import { Card } from "@/components/common/card";
 
 interface Props {
   project: Project;
@@ -14,12 +15,7 @@ interface Props {
 
 export default function ProjectCard({ project, className }: Props) {
   return (
-    <article
-      className={cn(
-        "group overflow-hidden rounded-3xl border border-border bg-background/40 transition-all duration-500 hover:border-violet-500/40 hover:shadow-2xl",
-        className,
-      )}
-    >
+    <Card className={cn("group overflow-hidden", className)}>
       <div className="grid gap-10 p-8 lg:grid-cols-2">
         <div className="overflow-hidden rounded-2xl">
           <Image
@@ -48,6 +44,6 @@ export default function ProjectCard({ project, className }: Props) {
           />
         </div>
       </div>
-    </article>
+    </Card>
   );
 }

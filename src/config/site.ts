@@ -8,10 +8,22 @@ export const siteConfig = {
 
   resume:
     "https://drive.google.com/file/d/1Wauyt6VQUnQunoMKvXbWt5apQC0FcWNt/view?usp=drive_link",
+  social: {
+    github: {
+      url: "https://github.com/nurulamin092",
+      label: "github.com/nurulamin092",
+    },
+
+    linkedin: {
+      url: "https://www.linkedin.com/in/mnurulamin/",
+      label: "linkedin.com/in/mnurulamin",
+    },
+
+    resume: {
+      url: "https://drive.google.com/...",
+      label: "Download Resume",
+    },
+  },
 
   email: "mnurulamin02@outlook.com",
-
-  github: "https://github.com/nurulamin092",
-
-  linkedin: "https://www.linkedin.com/in/mnurulamin/",
 } as const;

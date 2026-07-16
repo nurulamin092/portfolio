@@ -42,6 +42,7 @@ export default function ProjectCard({ project, className }: Props) {
           <ProjectTech technologies={project.technologies} />
           <ProjectFeatures features={project.features} />
           <ProjectActions
+            slug={project.slug}
             liveUrl={project.liveUrl}
             repository={project.repository}
           />

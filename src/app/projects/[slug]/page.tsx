@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { getProjectBySlug } from "@/lib/projects";
+import { getProject } from "@/lib/projects";
 
 interface Props {
   params: Promise<{
@@ -11,7 +11,7 @@ interface Props {
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
 
-  const project = getProjectBySlug(slug);
+  const project = getProject(slug);
 
   if (!project) {
     notFound();

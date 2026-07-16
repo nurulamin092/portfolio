@@ -21,7 +21,11 @@ export interface Project {
 
   featured: boolean;
 
-  status?: "Completed" | "In Progress";
+  year: string;
 
-  year?: string;
+  status: "Completed" | "In Progress";
+
+  role: string;
+
+  duration: string;
 }

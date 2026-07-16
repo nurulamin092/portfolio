@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 interface Props {
+  slug: string;
   liveUrl?: string;
   repository: {
     client: string;
@@ -10,7 +11,7 @@ interface Props {
   };
 }
 
-export default function ProjectActions({ liveUrl, repository }: Props) {
+export default function ProjectActions({ slug, liveUrl, repository }: Props) {
   return (
     <div className="mt-8 flex gap-3">
       {liveUrl && (
@@ -42,6 +43,13 @@ export default function ProjectActions({ liveUrl, repository }: Props) {
           Server Code
         </Link>
       )}
+      <Link
+        href={`/projects/${slug}`}
+        className="inline-flex items-center gap-2 rounded-xl border border-violet-500 px-5 py-3 text-violet-400 transition hover:bg-violet-500 hover:text-white"
+      >
+        Case Study
+        <ArrowRight className="size-4" />
+      </Link>
     </div>
   );
 }

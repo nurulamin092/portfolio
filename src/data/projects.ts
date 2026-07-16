@@ -42,5 +42,12 @@ export const projects: Project[] = [
     liveUrl: "https://your-domain.com",
 
     featured: true,
+    year: "2026",
+
+    status: "Completed",
+
+    role: "Full Stack Developer",
+
+    duration: "8 Weeks",
   },
 ];

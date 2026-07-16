@@ -1,6 +1,6 @@
 import { experiences } from "@/data/experience";
 
-import TimelineItem from "./TimelineItem";
+import TimelineItem from "./ExperienceCard";
 
 export default function ExperienceTimeline() {
   return (

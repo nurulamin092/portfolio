@@ -1,3 +1,29 @@
+export type TechnologyCategory =
+  | "Frontend"
+  | "Backend"
+  | "Database"
+  | "ORM"
+  | "Authentication"
+  | "Payment"
+  | "Styling"
+  | "Deployment"
+  | "Tool";
+
+export interface Technology {
+  name: string;
+  category: TechnologyCategory;
+}
+
+export interface ProjectImage {
+  title: string;
+  image: string;
+}
+
+export interface Challenge {
+  title: string;
+  solution: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -7,11 +33,17 @@ export interface Project {
   description: string;
 
   image: string;
-  gallery?: string[];
+  gallery: ProjectImage[];
 
-  technologies: string[];
+  technologies: Technology[];
+
   features: string[];
 
+  overview: string;
+  problem: string;
+  solution: string;
+  challenges: Challenge[];
+  learnings: string[];
   repository: {
     client: string;
     server?: string;
@@ -22,10 +54,7 @@ export interface Project {
   featured: boolean;
 
   year: string;
-
   status: "Completed" | "In Progress";
-
   role: string;
-
   duration: string;
 }

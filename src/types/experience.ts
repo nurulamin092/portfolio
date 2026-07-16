@@ -1,6 +1,17 @@
 export interface Experience {
-  year: string;
-  title: string;
+  id: string;
+
   company: string;
+
+  role: string;
+
+  period: string;
+
+  location: string;
+
   description: string;
+
+  achievements: string[];
+
+  technologies: string[];
 }

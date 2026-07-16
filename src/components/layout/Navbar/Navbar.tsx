@@ -29,7 +29,9 @@ export default function Navbar() {
             scrolled ? "h-16" : "h-20",
           )}
         >
-          <Logo />
+          <div className="mb-10">
+            <Logo />
+          </div>
 
           <DesktopNav />
 

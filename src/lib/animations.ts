@@ -85,3 +85,46 @@ export const navbarReveal: Variants = {
     },
   },
 };
+
+export const mobileOverlay: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      ease: easing,
+    },
+  },
+
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
+export const mobileMenu: Variants = {
+  hidden: {
+    x: "100%",
+  },
+
+  visible: {
+    x: 0,
+    transition: {
+      duration: 0.35,
+      ease: easing,
+    },
+  },
+
+  exit: {
+    x: "100%",
+    transition: {
+      duration: 0.25,
+      ease: easing,
+    },
+  },
+};

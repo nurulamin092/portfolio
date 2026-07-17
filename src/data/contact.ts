@@ -14,7 +14,7 @@ export const contactData = [
   {
     title: "GitHub",
     value: "github.com/nurulamin092",
-    href: siteConfig.social.github.url,
+    href: siteConfig.social.github,
     icon: FaGithub,
   },
 

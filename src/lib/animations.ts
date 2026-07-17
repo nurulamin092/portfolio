@@ -128,3 +128,23 @@ export const mobileMenu: Variants = {
     },
   },
 };
+
+export const hoverScale: Variants = {
+  rest: {
+    scale: 1,
+    y: 0,
+    transition: {
+      duration: 0.25,
+      ease: easing,
+    },
+  },
+
+  hover: {
+    scale: 1.03,
+    y: -6,
+    transition: {
+      duration: 0.3,
+      ease: easing,
+    },
+  },
+};

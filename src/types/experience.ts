@@ -1,7 +1,7 @@
 export interface Experience {
   id: string;
-
   company: string;
+  course: string;
 
   role: string;
 

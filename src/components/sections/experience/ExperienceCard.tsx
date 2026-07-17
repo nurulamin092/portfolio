@@ -7,7 +7,23 @@ interface Props {
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <Card variant="glass" padding="lg">
+    <Card
+      variant="glass"
+      padding="lg"
+      className="
+  rounded-3xl
+  border-white/10
+  bg-white/3
+  backdrop-blur-xl
+
+  transition-all
+  duration-300
+
+  hover:-translate-y-1
+  hover:border-violet-500/30
+  hover:shadow-[0_25px_80px_rgba(124,58,237,.15)]
+"
+    >
       <p className="text-sm text-violet-400">{experience.period}</p>
 
       <h3 className="mt-2 text-2xl font-bold">{experience.company}</h3>

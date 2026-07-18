@@ -7,7 +7,8 @@ export type TechnologyCategory =
   | "Payment"
   | "Styling"
   | "Deployment"
-  | "Tool";
+  | "Tool"
+  | "API";
 
 export interface Technology {
   name: string;

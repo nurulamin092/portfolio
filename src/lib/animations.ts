@@ -133,17 +133,19 @@ export const hoverScale: Variants = {
   rest: {
     scale: 1,
     y: 0,
+    rotateX: 0,
     transition: {
-      duration: 0.25,
+      duration: 0.3,
       ease: easing,
     },
   },
 
   hover: {
-    scale: 1.03,
-    y: -6,
+    scale: 1.04,
+    y: -8,
+    rotateX: -2,
     transition: {
-      duration: 0.3,
+      duration: 0.35,
       ease: easing,
     },
   },

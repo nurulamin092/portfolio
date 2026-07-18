@@ -1,4 +1,19 @@
 import type { Project } from "@/types/project";
+export type TechnologyCategory =
+  | "Frontend"
+  | "Backend"
+  | "Database"
+  | "ORM"
+  | "Styling"
+  | "Authentication"
+  | "Payment"
+  | "API"
+  | "Tool";
+
+export interface Technology {
+  name: string;
+  category: TechnologyCategory;
+}
 
 export const projects: Project[] = [
   {
@@ -8,24 +23,25 @@ export const projects: Project[] = [
 
     title: "EcoSpark Hub",
 
-    shortDescription: "Modern Sustainability Platform",
+    shortDescription: "Full Stack Sustainability Platform",
 
     description:
-      "EcoSpark Hub is a production-ready full-stack sustainability platform where users can discover, publish, and monetize eco-friendly ideas with secure authentication, role-based access, and premium features.",
+      "A production-ready sustainability platform where users can publish ideas, vote, comment, purchase premium content, and interact through a modern community-driven ecosystem.",
 
-    image: "/projects/ecospark.png",
+    image: "/projects/ecospark/home.png",
 
     gallery: [
       {
         title: "Home Page",
-        image: "/projects/ecospark/home.png",
+
+        image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735",
       },
       {
         title: "Ideas Feed",
         image: "/projects/ecospark/ideas.png",
       },
       {
-        title: "Payment",
+        title: "Premium Payment",
         image: "/projects/ecospark/payment.png",
       },
       {
@@ -35,102 +51,70 @@ export const projects: Project[] = [
     ],
 
     technologies: [
-      {
-        name: "Next.js 16",
-        category: "Frontend",
-      },
-      {
-        name: "React 19",
-        category: "Frontend",
-      },
-      {
-        name: "TypeScript",
-        category: "Frontend",
-      },
-      {
-        name: "Tailwind CSS",
-        category: "Styling",
-      },
-      {
-        name: "Express.js",
-        category: "Backend",
-      },
-      {
-        name: "PostgreSQL",
-        category: "Database",
-      },
-      {
-        name: "Prisma ORM",
-        category: "ORM",
-      },
-      {
-        name: "JWT",
-        category: "Authentication",
-      },
-      {
-        name: "Stripe",
-        category: "Payment",
-      },
+      { name: "Next.js 16", category: "Frontend" },
+      { name: "React 19", category: "Frontend" },
+      { name: "TypeScript", category: "Frontend" },
+      { name: "Tailwind CSS", category: "Styling" },
+      { name: "Express.js", category: "Backend" },
+      { name: "PostgreSQL", category: "Database" },
+      { name: "Prisma ORM", category: "ORM" },
+      { name: "JWT", category: "Authentication" },
+      { name: "Stripe", category: "Payment" },
     ],
 
     features: [
-      "JWT Authentication",
+      "Authentication",
       "Role Based Access",
+      "Premium Ideas",
       "Stripe Payment",
+      "Nested Comments",
+      "Voting System",
       "Admin Dashboard",
-      "Idea Publishing",
-      "Premium Content",
+      "Bookmark System",
     ],
 
     overview:
-      "EcoSpark Hub is a full-stack platform where users can publish sustainability ideas, interact with the community, and unlock premium content through secure payments.",
+      "A complete SaaS-style sustainability platform with authentication, premium content, payments, community engagement, and admin management.",
 
     problem:
-      "Many sustainability platforms focus only on content publishing and lack community engagement, premium features, and scalable administration.",
+      "Most sustainability communities lack premium content, moderation tools, and scalable architecture.",
 
     solution:
-      "EcoSpark Hub introduces role-based access, premium content, secure authentication, idea voting, Stripe payments, and a powerful admin dashboard to provide a complete ecosystem.",
+      "Built a modern full-stack application with secure authentication, Stripe payments, role-based authorization, and community features.",
 
     challenges: [
       {
-        title: "Implementing secure role-based authentication",
-        solution:
-          "Designed JWT authentication with role-based middleware and protected API routes.",
+        title: "Complex Authorization",
+        solution: "Implemented JWT authentication with role-based middleware.",
       },
-
       {
-        title: "Building nested comments",
-        solution:
-          "Implemented recursive comment rendering with parent-child relationships.",
+        title: "Nested Comments",
+        solution: "Designed recursive comment architecture.",
       },
-
       {
-        title: "Managing complex Prisma relations",
-        solution:
-          "Optimized schema design and used Prisma relations for scalable queries.",
+        title: "Payment Integration",
+        solution: "Integrated secure Stripe Checkout flow.",
       },
-
       {
-        title: "Payment integration",
-        solution:
-          "Integrated Stripe Checkout and verified payments securely on the backend.",
+        title: "Database Relations",
+        solution: "Optimized Prisma relational schema.",
       },
     ],
 
     learnings: [
-      "Scalable folder architecture",
-      "Repository & Service Layer",
-      "React Query best practices",
-      "Authentication flow design",
-      "Prisma relation modeling",
+      "Scalable Architecture",
+      "JWT Security",
+      "Repository Pattern",
+      "React Query",
+      "Prisma Relations",
     ],
 
     repository: {
-      client: "https://github.com/nurulamin092/ecospark-client",
-      server: "https://github.com/nurulamin092/ecospark-server",
+      client: "https://github.com/nurulamin092/eco-spark-hub-client",
+      server: "https://github.com/nurulamin092/EcoSpark-Hub-Server.git",
     },
 
-    liveUrl: "https://your-domain.com",
+    liveUrl: "https://eco-spark-hub-client-eta.vercel.app",
 
     featured: true,
 
@@ -141,5 +125,133 @@ export const projects: Project[] = [
     role: "Full Stack Developer",
 
     duration: "8 Weeks",
+  },
+  {
+    id: "skillbridge",
+
+    slug: "skillbridge",
+
+    title: "SkillBridge",
+
+    shortDescription: "Tutor Booking Platform",
+
+    description:
+      "A modern tutor booking platform where students can discover tutors, schedule sessions, manage bookings, and interact through a responsive user experience.",
+
+    image: "/projects/skill/home.png",
+
+    gallery: [],
+
+    technologies: [
+      { name: "Next.js", category: "Frontend" },
+      { name: "React", category: "Frontend" },
+      { name: "TypeScript", category: "Frontend" },
+      { name: "Tailwind CSS", category: "Styling" },
+      { name: "Node.js", category: "Backend" },
+      { name: "MongoDB", category: "Database" },
+    ],
+
+    features: [
+      "Authentication",
+      "Tutor Profiles",
+      "Booking System",
+      "Search & Filter",
+      "Dashboard",
+      "Responsive UI",
+    ],
+
+    overview:
+      "A complete tutoring platform connecting students and tutors with booking and profile management.",
+
+    problem:
+      "Finding qualified tutors and managing bookings efficiently is often difficult.",
+
+    solution:
+      "Developed a booking platform with tutor management, authentication, and responsive UI.",
+
+    challenges: [],
+
+    learnings: [
+      "Authentication",
+      "Filtering",
+      "Responsive Design",
+      "Dashboard UI",
+    ],
+
+    repository: {
+      client: "https://github.com/nurulamin092/skill-bridge-web-client.git",
+      server: "https://github.com/nurulamin092/skill-bridge-web-server.git",
+    },
+
+    liveUrl: "https://skill-bridge-web-client.vercel.app",
+
+    featured: true,
+
+    year: "2025",
+
+    status: "Completed",
+
+    role: "Full Stack Developer",
+
+    duration: "6 Weeks",
+  },
+  {
+    id: "moviedb",
+
+    slug: "movie-db",
+
+    title: "MovieDB",
+
+    shortDescription: "Movie Discovery Application",
+
+    description:
+      "A movie browsing application powered by TMDB API where users can search movies, explore trending titles, and view detailed movie information.",
+
+    image: "/projects/movie/home.png",
+
+    gallery: [],
+
+    technologies: [
+      { name: "Next.js", category: "Frontend" },
+      { name: "React", category: "Frontend" },
+      { name: "TypeScript", category: "Frontend" },
+      { name: "Tailwind CSS", category: "Styling" },
+      { name: "TMDB API", category: "API" },
+    ],
+
+    features: [
+      "Trending Movies",
+      "Movie Search",
+      "Movie Details",
+      "Responsive Design",
+      "API Integration",
+    ],
+
+    overview: "A modern movie discovery application built with TMDB API.",
+
+    problem: "Users need a fast interface to explore and search movies.",
+
+    solution:
+      "Integrated TMDB API with a responsive frontend for seamless movie discovery.",
+
+    challenges: [],
+
+    learnings: ["API Integration", "Dynamic Routing", "Search Optimization"],
+
+    repository: {
+      client: "https://github.com/nurulamin092/the_movie_db.git",
+    },
+
+    liveUrl: "https://the-movie-db-pi.vercel.app",
+
+    featured: false,
+
+    year: "2025",
+
+    status: "Completed",
+
+    role: "Frontend Developer",
+
+    duration: "1 Week",
   },
 ];

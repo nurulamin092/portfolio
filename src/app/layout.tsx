@@ -3,7 +3,7 @@ import { ActiveSectionProvider } from "@/providers/ActiveSectionProvider";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar/Navbar";
-
+import PageBackground from "@/components/common/PageBackground";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -32,8 +32,7 @@ export default function RootLayout({
       >
         <ActiveSectionProvider>
           <Navbar />
-
-          {children}
+          <PageBackground>{children}</PageBackground>
         </ActiveSectionProvider>
       </body>
     </html>
